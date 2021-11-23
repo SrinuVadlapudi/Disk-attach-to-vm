@@ -7,7 +7,7 @@ environment {
 	stage ('credential') {
 	 steps {
 	    sh 'mkdir -p creds'
-		sh 'echo $Google_key | base64 -d > ./creds/sri999-9617e802577a.json'
+		sh 'echo $Google_key | base64 -d > ./creds/veera999-049ab1407e63.json'
 		}
 		}
    
@@ -21,7 +21,7 @@ environment {
   
   stage ('DISK creating') {
   steps {
-   sh 'gcloud compute disks create disk-1022 --zone=asia-northeast2-b --type=pd-ssd --size=100'
+   sh 'gcloud compute disks create disk-01 --zone=asia-northeast2-b --type=pd-ssd --size=100'
   sh 'sleep 2'
   }
   }
@@ -30,7 +30,7 @@ environment {
   
   stage ('DISK ADDING') {
   steps {
-  sh 'gcloud compute instances attach-disk instance-01 --disk=disk-1022 --zone=asia-northeast2-b'
+  sh 'gcloud compute instances attach-disk instance-01 --disk=disk-01 --zone=asia-northeast2-b'
   sh 'sleep 7'
   }
   } 
