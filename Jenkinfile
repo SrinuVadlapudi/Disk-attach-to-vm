@@ -65,13 +65,13 @@ environment {
  
  
  
-   stage ('LIST INSTANCES')  {
+   stage ('LIST INSTANCES-1')  {
        steps {
  sh 'gcloud compute instances list'
  sh 'sleep 10'
       }
   }
-  stage ('LIST DISKS')  {
+  stage ('LIST DISKS-1')  {
        steps {
  sh 'gcloud compute disks list'
  sh 'sleep 10'
