@@ -50,7 +50,7 @@ environment {
  
  stage ('DELETE INSTANCE'){
  steps {
- sh'gcloud cpmpute instances delete instance-01'
+ sh'gcloud compute instances delete instance-01'
  sh 'sleep 12'
  }
  }
