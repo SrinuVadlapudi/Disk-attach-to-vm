@@ -13,7 +13,7 @@ environment {
    
   stage ('Instance Creating') {
   steps {
-  sh 'gcloud compute instances create instance-01 --project=veera999 --zone=asia-northeast2-b'
+//  sh 'gcloud compute instances create instance-01 --project=veera999 --zone=asia-northeast2-b'
   sh 'sleep 1'                 
   }
   
@@ -21,7 +21,7 @@ environment {
   
   stage ('DISK creating') {
   steps {
-   sh 'gcloud compute disks create disk-01 --zone=asia-northeast2-b --type=pd-ssd --size=100'
+ //  sh 'gcloud compute disks create disk-01 --zone=asia-northeast2-b --type=pd-ssd --size=100'
   sh 'sleep 2'
   }
   }
@@ -30,7 +30,7 @@ environment {
   
   stage ('DISK ADDING') {
   steps {
-  sh 'gcloud compute instances attach-disk instance-01 --disk=disk-01 --zone=asia-northeast2-b'
+//  sh 'gcloud compute instances attach-disk instance-01 --disk=disk-01 --zone=asia-northeast2-b'
   sh 'sleep 7'
   }
   } 
@@ -47,6 +47,36 @@ environment {
       }
   }
  
+ 
+ stage ('DELETE INSTANCE'){
+ steps {
+ sh'gcloud cpmpute instances delete instance-01'
+ sh 'sleep 12'
+ }
+ }
+ 
+ stage ('DELETE DISK') {
+ steps {
+ sh 'gcloud compute disks delete disk-01'
+ sh 'sleep 15'
+ }
+ }
+ 
+ 
+ 
+ 
+   stage ('LIST INSTANCES')  {
+       steps {
+ sh 'gcloud compute instances list'
+ sh 'sleep 10'
+      }
+  }
+  stage ('LIST DISKS')  {
+       steps {
+ sh 'gcloud compute disks list'
+ sh 'sleep 10'
+      }
+  }
  
   }
 }
