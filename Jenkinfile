@@ -51,7 +51,7 @@ environment {
  
  stage ('DISK REMOVING') {
   steps {
-  sh 'gcloud compute instances detach-disk instance-01 --disk=disk-001 --disk=disk-0010 --zone=asia-northeast2-b'
+  sh 'gcloud compute instances detach-disk instance-001 --disk=disk-001 --disk=disk-0010 --zone=asia-northeast2-b'
   sh 'sleep 7'
   }
   } 
