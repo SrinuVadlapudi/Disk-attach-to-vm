@@ -13,7 +13,7 @@ environment {
    
   stage ('Instance Creating') {
   steps {
-  sh 'gcloud compute instances create instance-001 --project=veera999 --zone=asia-northeast2-b'
+  sh 'gcloud compute instances create instance-001 --zone=asia-northeast2-b'
   sh 'sleep 1'                 
   }
   
