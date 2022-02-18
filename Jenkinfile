@@ -7,7 +7,7 @@ environment {
 	stage ('credential') {
 	 steps {
 	    sh 'mkdir -p creds'
-		sh 'echo $Google_key | base64 -d > ./creds/veera999-049ab1407e63.json'
+		sh 'echo $Google_key | base64 -d > ./creds/key.json'
 		}
 		}
    
