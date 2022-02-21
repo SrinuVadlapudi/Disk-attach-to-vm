@@ -55,7 +55,13 @@ environment {
   sh 'sleep 7'
   }
   } 
- 
+ stage ('Instance Remove') {
+  steps {
+  sh 'gcloud compute instances delete instance-001 --zone=asia-northeast2-b'
+  sh 'sleep 1'                 
+  }
+  
+  }
  
    stage ('LIST INSTANCES-1')  {
        steps {
